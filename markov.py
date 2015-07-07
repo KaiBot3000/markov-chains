@@ -8,17 +8,15 @@ def make_chains(corpus):
     bigrams = {}
     word_list = corpus.split(" ")
     word_count = len(word_list)
-    print word_count
-    # i = 0 # corpus index
-    # for words in corpus:
-    #     word_count += 1
+    i = 0 # word_list index counter
 
-    # while i < word_count:
-    #     bigram_tuple = (corpus[i], corpus[(i + 1)])
-    #     bigrams[bigram_tuple] = []
-    #     i += 1
+    while i < (word_count - 1):
+        bigram_tuple = (word_list[i], word_list[(i + 1)])
+        bigrams[bigram_tuple] = []
+        i += 1
 
-    # print bigrams
+
+    print bigrams
 
     # if loop to generate values list
         # loops over words starting at thrid word
