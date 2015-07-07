@@ -6,15 +6,19 @@ def make_chains(corpus):
     # loop through words
     # make tuple bigrams
     bigrams = {}
-    word_count = 0
-    i = 0 # corpus index
-    for words in corpus:
-        word_count += 1
-    while i < word_count:
-        bigrams[(corpus[i], corpus[(i + 1)])] = []
-        i += 1
+    word_list = corpus.split(" ")
+    word_count = len(word_list)
+    print word_count
+    # i = 0 # corpus index
+    # for words in corpus:
+    #     word_count += 1
 
-    print bigrams
+    # while i < word_count:
+    #     bigram_tuple = (corpus[i], corpus[(i + 1)])
+    #     bigrams[bigram_tuple] = []
+    #     i += 1
+
+    # print bigrams
 
     # if loop to generate values list
         # loops over words starting at thrid word
@@ -33,10 +37,14 @@ def make_chains(corpus):
 # # be used by examining the `sys.argv` arguments (if neccessary, see the
 # # Python docs for sys.argv)
 
-# input_text = "Some text"
-
-# # Get a Markov chain
-# chain_dict = make_chains(input_text)
+# open and process text into single string
+input_text = open("green-eggs.txt")
+input_string = ""
+for line in input_text:
+    input_string += line.replace("\n", " ")
+print type(input_string)
+# Get a Markov chain
+chain_dict = make_chains(input_string)
 
 # # Produce random text
 # random_text = make_text(chain_dict)
